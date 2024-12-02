@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffret -  Manon Lenne </title>
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- meta description -->
+  <meta name="description" content="Portfolio de Manon Lenne, projet coffret graphique.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1><a href="index.html"><img src="favicon.png" alt="Manon Lenne"></a></h1>
+
+    <nav class="header-nav">
+      <a href="accueil.html">accueil</a>
+      <a href="a-propos.html">à propos</a>
+      <a href="https://www.instagram.com/des.trucs_?igsh=MXdpdm51NHFoZjhteA==">instagram</a>
+    </nav>
+  </header>
+
+  <div class="page-projet">
+    <div class="description">
+      <h2>Affiches</h2>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora, aliquam dolorem? Sunt vero eos soluta doloremque suscipit cupiditate. Vero quasi dolorem veniam rem consectetur quae magnam doloremque laboriosam deserunt doloribus?</p>
+      <h3>Déclinaisons</h3>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora, aliquam dolorem? Sunt vero eos soluta doloremque ue laboriosam deserunt doloribus?</p>
+  
+    </div>
+    <div class="projet-data">
+      <h3> Client</h3>
+      <p>Canson</p>
+      <h3> Année</h3>
+      <p>2024</p>
+      <h3> Services</h3>
+      <p>Design graphique</p>
+
+    </div>
+
+    <figure class="xl">
+      <img  src="img/coffret/IMG_6767.jpeg" alt="Affiches">
+      <img src="img/coffret/IMG_6766.jpeg" alt="Affiches">
+      <img src="img/coffret/IMG_6765.jpeg" alt="Affiches">
+      <img src="img/coffret/IMG_6764.jpeg" alt="Affiches">
+      <img src="img/coffret/IMG_6763.jpeg" alt="Affiches">
+      
+      <div class="slider"></div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+
+      <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+          showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+          let i;
+          let slides = document.querySelectorAll('.xl img');
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          slides[slideIndex-1].style.display = "block";
+        }
+      </script>
+    
+    
+</body>
+</html>
