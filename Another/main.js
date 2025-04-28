@@ -134,7 +134,7 @@ json.forEach((item) => {
     )
     .catch((error) => {
       console.error("Error loading image:", error);
-      img.src = "/Another/img/affiches_eidolon.png"; // Fallback image with relative path
+      img.src = "/Another/img/default.png"; // Fallback image with relative path
     }
     );
 
