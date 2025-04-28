@@ -120,21 +120,23 @@ json.forEach((item) => {
 
     
 
+
     fetch(`img/${sanitizeName(item.titre)}.png`)
     .then((response) => {
       if (!response.ok) {
-        throw new Error("Image not found");
+        img.src = '/Another/img/default.png'; // Fallback image with relative path
+       // throw new Error("Image not found");
       }
       return response.blob();
     })
     .then((blob) => {
       const imgUrl = URL.createObjectURL(blob);
-      img.src = imgUrl;
+      img.src = imgPath;
     }
     )
     .catch((error) => {
       console.error("Error loading image:", error);
-      img.src = "/Another/img/affiches_eidolon.png"; // Fallback image with relative path
+      img.src = '/Another/img/default.png'; // Fallback image with relative path
     }
     );
 
